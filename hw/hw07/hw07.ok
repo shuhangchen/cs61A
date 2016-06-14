@@ -1,0 +1,25 @@
+{
+    "name": "Homework 7",
+    "endpoint": "cal/cs61a/sp16/hw07",
+    "src": [
+        "hw07.py"
+    ],
+    "tests": {
+        "hw07.py": "doctest"
+    },
+    "default_tests": [
+        "permutations",
+        "scale_stream",
+        "efficient_map_stream",
+        "make_s",
+        "make_stream_of_streams"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "backup"
+    ]
+}

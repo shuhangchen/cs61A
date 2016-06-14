@@ -1,0 +1,21 @@
+{
+    "name": "Mini Quiz 3",
+    "endpoint": "cal/cs61a/sp16/mini-quiz3",
+    "src": [
+        "mini-quiz03.scm",
+        "tests/iterators.py",
+        "tests/rle.py"
+    ],
+    "tests": {
+        "tests/iterators.py": "ok_test",
+        "tests/rle.py": "ok_test"
+    },
+    "protocols": [
+        "restore",
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "backup"
+    ]
+}

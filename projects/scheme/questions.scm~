@@ -1,0 +1,151 @@
+(define (caar x) (car (car x)))
+(define (cadr x) (car (cdr x)))
+(define (cddr x) (cdr (cdr x)))
+(define (cadar x) (car (cdr (car x))))
+
+; Some utility functions that you may find useful to implement.
+(define (map proc items)
+  'REPLACE-THIS-LINE)
+
+(define (cons-all first rests)
+  (if (null? rests)
+      nil
+      (cons (cons first (car rests)) (cons-all first (cdr rests))))
+)
+
+(define (zip pairs)
+  'REPLACE-THIS-LINE)
+
+;; Problem 18
+;; Returns a list of two-element lists
+(define (enumerate s)
+  ; BEGIN Question 18
+  (define (enumerate-index s num)
+    (if (null? s)
+	s
+	(cons (cons num (cons (car s) nil)) (enumerate-index (cdr s) (+ num 1)))
+	))
+  (if (null? s)
+      s
+      (enumerate-index s 0)
+  )
+)
+  ; END Question 18
+
+;; Problem 19
+;; List all ways to make change for TOTAL with DENOMS
+
+(define (eliminate-0 lists)
+  (if (null? lists)
+      nil
+      (cons (list-no-0 (car lists)) (eliminate-0 (cdr lists)))))
+
+(define (list-change total denoms)
+  (eliminate-0 (list-change-with0 total denoms))
+)
+
+
+(define (list-no-0 list)
+  (if (= (car list) 0)
+      nil
+      (cons (car list) (list-no-0 (cdr list)))))
+
+(define (list-change-with0 total denoms)
+  (filter has0 (list-change-rough total denoms))
+)
+
+(define (filter fn list)
+  (if (null? list)
+      nil
+      (if (fn (car list))
+	  (cons (car list) (filter fn (cdr list)))
+	  (filter fn (cdr list)))))
+
+(define (has0 lis)
+  (if (= (end lis) 0)
+      true 
+      false)
+)
+
+(define (end list)
+  (if (null? (cdr list))
+      (car list)
+      (end (cdr list)))
+)
+
+(define (list-change-rough total denoms)
+  ; BEGIN Question 19
+  (if (< total (car denoms))
+      (list-change total (cdr denoms))
+      (small-list-change total denoms))
+)
+ 
+
+(define (small-list-change  total denoms)
+  (cond ((null? denoms) (list (list -1)))
+	((< total 0) (list (list -1)))
+	((= total 0) (list (list 0)))
+	(else (cons-lists (cons-all (car denoms) (small-list-change (- total (car denoms)) denoms)) (small-list-change total (cdr denoms)))))
+)
+
+
+(define (cons-lists lis1 lis2)
+  (if (null? lis1)
+      lis2
+      (cons (car lis1) (cons-lists (cdr lis1) lis2)))
+)
+  ; END Question 19
+
+
+;; Problem 20
+;; Returns a function that checks if an expression is the special form FORM
+(define (check-special form)
+  (lambda (expr) (equal? form (car expr))))
+
+(define lambda? (check-special 'lambda))
+(define define? (check-special 'define))
+(define quoted? (check-special 'quote))
+(define let?    (check-special 'let))
+
+;; Converts all let special forms in EXPR into equivalent forms using lambda
+(define (analyze expr)
+  (cond ((atom? expr)
+         ; BEGIN Question 20
+         'REPLACE-THIS-LINE
+         ; END Question 20
+         )
+        ((quoted? expr)
+         ; BEGIN Question 20
+         'REPLACE-THIS-LINE
+         ; END Question 20
+         )
+        ((or (lambda? expr)
+             (define? expr))
+         (let ((form   (car expr))
+               (params (cadr expr))
+               (body   (cddr expr)))
+           ; BEGIN Question 20
+           'REPLACE-THIS-LINE
+           ; END Question 20
+           ))
+        ((let? expr)
+         (let ((values (cadr expr))
+               (body   (cddr expr)))
+           ; BEGIN Question 20
+           'REPLACE-THIS-LINE
+           ; END Question 20
+           ))
+        (else
+         ; BEGIN Question 20
+         'REPLACE-THIS-LINE
+         ; END Question 20
+         )))
+
+;; Problem 21 (optional)
+;; Draw the hax image using turtle graphics.
+(define (hax d k)
+  ; BEGIN Question 21
+  'REPLACE-THIS-LINE
+  )
+  ; END Question 21
+

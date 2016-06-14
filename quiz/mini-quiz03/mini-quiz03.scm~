@@ -1,0 +1,6 @@
+; Load this file into an interactive session with:
+; python3 scheme -load quiz03.scm
+
+(define (rle s)
+  'YOUR-CODE-HERE
+)

@@ -1,0 +1,12 @@
+class Sad:
+    def __init__(self, green):
+        self.green = green
+    def __next__(self):
+        frog = self.green
+        if frog > 50:
+            raise StopIteration
+        self.green += frog
+        return frog
+    def __iter__(self):
+        green *= self.green
+        return self

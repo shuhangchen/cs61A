@@ -1,0 +1,24 @@
+{
+    "name": "Mini Quiz 1",
+    "endpoint": "cal/cs61a/sp16/mini-quiz1",
+    "src": [
+        "tests/nonlocal.py",
+        "tests/lists.py",
+        "tests/oop.py",
+        "tests/growth.py"
+    ],
+    "tests": {
+        "tests/nonlocal.py": "ok_test",
+        "tests/lists.py": "ok_test",
+        "tests/oop.py": "ok_test",
+        "tests/growth.py": "ok_test"
+    },
+    "protocols": [
+        "restore",
+        "file_contents",
+        "analytics",
+        "unlock",
+        "grading",
+        "backup"
+    ]
+}

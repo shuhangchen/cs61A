@@ -1,0 +1,21 @@
+{
+    "name": "Homework 9",
+    "endpoint": "cal/cs61a/sp16/hw09",
+    "src": [
+        "hw09.py"
+    ],
+    "tests": {
+        "hw09.py": "doctest"
+    },
+    "default_tests": [
+        "nearest_two",
+	"smooth"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "grading",
+        "analytics",
+        "backup"
+    ]
+}

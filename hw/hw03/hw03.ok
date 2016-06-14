@@ -1,0 +1,25 @@
+{
+    "name": "Homework 3",
+    "endpoint": "cal/cs61a/sp16/hw03",
+    "src": [
+        "hw03.py"
+    ],
+    "tests": {
+        "hw03.py": "doctest"
+    },
+    "default_tests": [
+        "flatten",
+        "interleave",
+        "merge",
+        "mergesort",
+        "simplify",
+        "balanced"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "grading",
+        "analytics",
+        "backup"
+    ]
+}

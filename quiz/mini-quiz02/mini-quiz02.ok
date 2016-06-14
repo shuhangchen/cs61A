@@ -1,0 +1,20 @@
+{
+    "name": "Mini Quiz 2",
+    "endpoint": "cal/cs61a/sp16/mini-quiz2",
+    "src": [
+        "mini-quiz02.scm",
+        "tests/wwsp-lists.py"
+    ],
+    "tests": {
+        "tests/wwsp-lists.py": "ok_test",
+        "tests/deep-map.py": "ok_test"
+    },
+    "protocols": [
+        "restore",
+        "file_contents",
+        "analytics",
+        "unlock",
+        "grading",
+        "backup"
+    ]
+}
